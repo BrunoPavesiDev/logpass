@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0a1929;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    color: #4ce0d2;
+}
+
+.container {
+    background-color: #102a43;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px 0px rgba(76, 224, 210, 0.3);
+    width: 350px;
+    text-align: center;
+    border: 1px solid #4ce0d2;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #4ce0d2;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    text-align: left;
+    color: #4ce0d2;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #4ce0d2;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #0a1929;
+    color: #4ce0d2;
+}
+
+.tipo-usuario {
+    text-align: left;
+    margin: 15px 0;
+    color: #4ce0d2;
+}
+
+.tipo-usuario label {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4ce0d2;
+    border: none;
+    color: #0a1929;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #3ab3a8;
+}
+
+.erro {
+    color: #ff6b6b;
+    margin-top: 10px;
+}
+
+a {
+    color: #4ce0d2;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #3ab3a8;
+}
+
+input[type="radio"] {
+    accent-color: #4ce0d2;
+}
+
+::placeholder {
+    color: #4ce0d2;
+    opacity: 0.5;
+}

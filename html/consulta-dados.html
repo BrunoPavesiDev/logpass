@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta de Dados - LogPass</title>
+  <link rel="stylesheet" href="../css/consulta-dados.css">
+  <style>
+    body {
+      background-color: #0a1929;
+      color: #4ce0d2;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .titulo-animado {
+      font-size: 48px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: #4ce0d2;
+      margin: 40px auto 20px;
+      justify-content: center;
+      animation: fade-move 3s ease-in-out infinite alternate;
+    }
+
+    .titulo-animado .texto {
+      overflow: hidden;
+      border-right: 0.15em solid #4ce0d2;
+      white-space: nowrap;
+      animation: typing 2s steps(12, end), blink-caret 0.75s step-end infinite;
+    }
+
+    .titulo-animado svg {
+      width: 48px;
+      height: 48px;
+      fill: #4ce0d2;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 7.5ch }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: #4ce0d2; }
+    }
+
+    @keyframes fade-move {
+      0% { opacity: 0.6; transform: translateY(0px); }
+      100% { opacity: 1; transform: translateY(10px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="titulo-animado">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M20 18H4V6h16m0-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h4v2h8v-2h4a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/>
+    </svg>
+    <div class="texto">LogPass</div>
+  </div>
+
+  <div class="container">
+    <header>
+      <h1>Consulta de Dados</h1>
+      <nav>
+        <a href="login.html">Login</a>
+        <a href="cadastro.html">Cadastro</a>
+      </nav>
+    </header>
+
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Buscar por nome ou código...">
+      <select id="filterType">
+        <option value="todos">Todos os Dados</option>
+        <option value="usuarios">Usuários</option>
+        <option value="produtos">Produtos</option>
+        <option value="pedidos">Pedidos</option>
+      </select>
+      <button id="searchButton">Buscar</button>
+    </div>
+
+    <div class="results">
+      <table id="resultsTable">
+        <thead id="tableHead">
+          <!-- Cabeçalhos serão inseridos via JavaScript -->
+        </thead>
+        <tbody id="tableBody">
+          <!-- Os resultados serão inseridos aqui via JavaScript -->
+        </tbody>
+      </table>
+      <div id="noResults" class="no-results">Nenhum resultado encontrado.</div>
+      <div id="loading" class="loading">Carregando...</div>
+    </div>
+
+    <div class="pagination">
+      <button id="prevPage" disabled>Anterior</button>
+      <span id="pageInfo">Página 1 de 1</span>
+      <button id="nextPage" disabled>Próxima</button>
+    </div>
+  </div>
+
+  <script src="../js/consulta-dados.js"></script>
+</body>
+</html>

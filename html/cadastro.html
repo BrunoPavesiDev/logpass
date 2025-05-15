@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cadastro - LogPass</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0a1929;
+      margin: 0;
+      color: #4ce0d2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100vh;
+      padding-top: 40px;
+      overflow: hidden;
+    }
+
+    .titulo-animado {
+      font-size: 48px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: #4ce0d2;
+      margin-bottom: 40px;
+      animation: fade-move 3s ease-in-out infinite alternate;
+    }
+
+    .titulo-animado svg {
+      width: 48px;
+      height: 48px;
+      fill: #4ce0d2;
+    }
+
+    .titulo-animado .texto {
+      overflow: hidden;
+      border-right: 0.15em solid #4ce0d2;
+      white-space: nowrap;
+      animation: typing 2s steps(12, end), blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 7.5ch }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: #4ce0d2; }
+    }
+
+    @keyframes fade-move {
+      0% { opacity: 0.6; transform: translateY(0px); }
+      100% { opacity: 1; transform: translateY(10px); }
+    }
+
+    .container {
+      background-color: #102a43;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0px 0px 15px 0px rgba(76, 224, 210, 0.3);
+      width: 350px;
+      text-align: center;
+      border: 1px solid #4ce0d2;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #4ce0d2;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      text-align: left;
+      color: #4ce0d2;
+    }
+
+    input[type="email"],
+    input[type="password"],
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #4ce0d2;
+      border-radius: 5px;
+      box-sizing: border-box;
+      background-color: #0a1929;
+      color: #4ce0d2;
+    }
+
+    .tipo-usuario {
+      text-align: left;
+      margin: 15px 0;
+      color: #4ce0d2;
+    }
+
+    .tipo-usuario label {
+      display: inline-block;
+      margin-right: 15px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #4ce0d2;
+      border: none;
+      color: #0a1929;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #3ab3a8;
+    }
+
+    .erro {
+      color: #ff6b6b;
+      margin-top: 10px;
+    }
+
+    a {
+      color: #4ce0d2;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: #3ab3a8;
+    }
+
+    input[type="radio"] {
+      accent-color: #4ce0d2;
+    }
+
+    ::placeholder {
+      color: #4ce0d2;
+      opacity: 0.5;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="titulo-animado">
+    <!-- Mesmo ícone SVG do login -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M20 18H4V6h16m0-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h4v2h8v-2h4a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/>
+    </svg>
+    <div class="texto">LogPass</div>
+  </div>
+
+  <div class="container">
+    <h1>Cadastro</h1>
+    <form id="formCadastro" method="POST">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="senha">Senha:</label>
+      <input type="password" id="senha" name="senha" required>
+
+      <div class="tipo-usuario">
+        <p>Tipo de Usuário:</p>
+        <label>
+          <input type="radio" name="tipoUsuario" value="empresa" required> Empresa
+        </label>
+        <label>
+          <input type="radio" name="tipoUsuario" value="consumidor" required> Consumidor
+        </label>
+      </div>
+
+      <button type="submit">Cadastrar</button>
+    </form>
+    <p>Já possui conta? <a href="login.html">Faça login</a></p>
+    <p>Consultar dados? <a href="consulta-dados.html">Clique aqui</a></p>
+    <div id="mensagemErro" class="erro"></div>
+  </div>
+
+  <script src="../js/cadastro.js"></script>
+</body>
+</html>
